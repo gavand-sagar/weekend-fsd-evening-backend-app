@@ -20,7 +20,7 @@ postRouter.post('/posts', (req, res) => {
 
     writeJsonToFile('./posts.json', allPost)
 
-    res.json('post created')
+    res.json(allPost)
 
 })
 
