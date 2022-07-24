@@ -1,5 +1,5 @@
 
-import {Router} from 'express'
+import {Router} from 'express' 
 const utils = Router()
 
 utils.get('/', (req, res) => {
