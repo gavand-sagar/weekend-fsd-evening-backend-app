@@ -1,9 +1,9 @@
 
-import {Router} from 'express' 
+import { Router } from 'express'
 const utils = Router()
 
 utils.get('/', (req, res) => {
-    res.send('Homepage')
+    res.json({ data: '<form><input/><button>Send</button></form>' })
 })
 
 utils.get('/greet', (req, res) => {

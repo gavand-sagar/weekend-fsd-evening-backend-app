@@ -7,7 +7,7 @@ userRouter.get('/users', (req, res) => {
     const fileData = readJsonFromFile('./users.json');
 
 
-    res.send(fileData)
+    res.json(fileData)
 })
 
 userRouter.post('/users', (req, res) => {
@@ -21,7 +21,7 @@ userRouter.post('/users', (req, res) => {
 
     writeJsonToFile('./users.json', allUsersList)
 
-    res.send('user added')
+    res.json('user added')
 
     // add a entry in users collection
 })
@@ -40,10 +40,10 @@ userRouter.delete('/users/:username', (req, res) => {
         allUsersList.splice(index, 1)
         writeJsonToFile('./users.json', allUsersList)
 
-        res.send('user deleted')
+        res.json('user deleted')
 
     } else {
-        res.send('user not found')
+        res.json('user not found')
     }
 
 })
@@ -58,9 +58,9 @@ userRouter.get('/authenticate', (req, res) => {
     const matchingRecord = mainUserList.filter(item => item.username == username && item.password == password)
 
     if (matchingRecord.length > 0) {
-        res.send("Authenticated")
+        res.json("Authenticated")
     } else {
-        res.send("Invalid credentials")
+        res.json("Invalid credentials")
     }
 
 })
